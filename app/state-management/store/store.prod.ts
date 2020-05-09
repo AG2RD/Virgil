@@ -1,11 +1,12 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { createHashHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
-import createRootReducer from '../reducers';
-import { Store, counterStateType } from '../reducers/types';
+import { createBrowserHistory } from 'history';
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
 
-const history = createHashHistory();
+import createRootReducer from '../reducers';
+import { counterStateType, Store } from '../reducers/types';
+
+const history = createBrowserHistory();
 const rootReducer = createRootReducer(history);
 const router = routerMiddleware(history);
 const enhancer = applyMiddleware(thunk, router);

@@ -1,10 +1,11 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import { createHashHistory } from 'history';
-import { routerMiddleware, routerActions } from 'connected-react-router';
+import { routerActions, routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
-import createRootReducer from '../reducers';
+import thunk from 'redux-thunk';
+
 import * as counterActions from '../actions/counter';
+import createRootReducer from '../reducers';
 import { counterStateType } from '../reducers/types';
 
 declare global {
@@ -21,7 +22,7 @@ declare global {
   }
 }
 
-const history = createHashHistory();
+const history = createBrowserHistory();
 
 const rootReducer = createRootReducer(history);
 

@@ -1,9 +1,10 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+
+import App from './client/containers/App';
+import CounterPage from './client/containers/CounterPage';
+import HomePage from './client/containers/HomePage';
 import routes from './constants/routes.json';
-import App from './containers/App';
-import HomePage from './containers/HomePage';
-import CounterPage from './containers/CounterPage';
 
 export default function Routes() {
   return (

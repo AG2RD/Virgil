@@ -1,13 +1,9 @@
-import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+
+import { decrement, increment, incrementAsync, incrementIfOdd } from '../../state-management/actions/counter';
+import { counterStateType } from '../../state-management/reducers/types';
 import Counter from '../components/Counter';
-import {
-  increment,
-  decrement,
-  incrementIfOdd,
-  incrementAsync
-} from '../actions/counter';
-import { counterStateType } from '../reducers/types';
 
 function mapStateToProps(state: counterStateType) {
   return {

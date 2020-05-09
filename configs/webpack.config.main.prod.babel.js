@@ -1,15 +1,16 @@
 /**
  * Webpack config for production electron main process
  */
-
 import path from 'path';
-import webpack from 'webpack';
-import merge from 'webpack-merge';
 import TerserPlugin from 'terser-webpack-plugin';
+import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import baseConfig from './webpack.config.base';
+import merge from 'webpack-merge';
+
 import CheckNodeEnv from '../internals/scripts/CheckNodeEnv';
 import DeleteSourceMaps from '../internals/scripts/DeleteSourceMaps';
+import baseConfig from './webpack.config.base';
+
 
 CheckNodeEnv('production');
 DeleteSourceMaps();
